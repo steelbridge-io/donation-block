@@ -140,14 +140,14 @@ registerBlockType( 'cgb/block-donation-block', {
 						/>
 					);
 				}
-		return (
-			<img
-				className="card__image"
-				src={ src }
-				alt=""
-				aria-hidden="true"
-			/>
-		);
+			return (
+				<img
+					className="card__image"
+					src={ src }
+					alt=""
+					aria-hidden="true"
+				/>
+			);
 		};
 		return (
 			<div className="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
