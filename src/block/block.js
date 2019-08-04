@@ -150,12 +150,27 @@ registerBlockType( 'cgb/block-donation-block', {
 		);
 		};
 		return (
-			<div className="card">
-				{ cardImage(attributes.imageUrl, attributes.imageAlt) }
-				<div className="card__content">
-					<h3 className="card__title">{ attributes.title }</h3>
-					<div className="card__body">
-						{ attributes.body }
+			<div className="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+				<div className="panel panel-default">
+					<div className="panel-heading" role="tab" id="headingOne">
+						<h4 className="panel-title">
+							<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
+							   aria-expanded="true" aria-controls="collapseOne">
+								<h3 className="card__title">{ attributes.title }</h3>
+							</a>
+						</h4>
+					</div>
+					<div id="collapseOne" className="panel-collapse collapse in" role="tabpanel"
+						 aria-labelledby="headingOne">
+						<div className="panel-body">
+							<div className="card">
+							{ cardImage(attributes.imageUrl, attributes.imageAlt) }
+							<div className="card__body">
+								{ attributes.body }
+							</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
