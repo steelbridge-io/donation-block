@@ -924,12 +924,12 @@ registerBlockType( 'cgb/block-donation-block', {
 			<div className="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 				<div className="panel panel-default">
 					<div className="panel-heading" role="tab" id="headingOne">
-						<h4 className="panel-title">
+						<div className="panel-title">
 							<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
 							   aria-expanded="true" aria-controls="collapseOne">
 								<h3 className="card__title">{ title }</h3>
 							</a>
-						</h4>
+						</div>
 					</div>
 					<div id="collapseOne" className="panel-collapse collapse in" role="tabpanel"
 						 aria-labelledby="headingOne">
@@ -946,12 +946,12 @@ registerBlockType( 'cgb/block-donation-block', {
 
 				{ (isEmpty2) ? ({}) : ( <div className="panel panel-default">
 					<div className="panel-heading" role="tab" id="headingTwo">
-						<h4 className="panel-title">
+						<div className="panel-title">
 							<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"
 							   aria-expanded="false" aria-controls="collapseTwo">
 								<h3 className="card__title2"> {title2} </h3>
 							</a>
-						</h4>
+						</div>
 					</div>
 					<div id="collapseTwo" className="panel-collapse collapse" role="tabpanel"
 						 aria-labelledby="headingTwo">
@@ -968,12 +968,12 @@ registerBlockType( 'cgb/block-donation-block', {
 
 				{ (isEmpty3) ? ({}) : ( <div className="panel panel-default">
 					<div className="panel-heading" role="tab" id="headingThree">
-						<h4 className="panel-title">
+						<div className="panel-title">
 							<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree"
 							   aria-expanded="false" aria-controls="collapseThree">
 								<h3 className="card__title3"> {title3} </h3>
 							</a>
-						</h4>
+						</div>
 					</div>
 					<div id="collapseThree" className="panel-collapse collapse" role="tabpanel"
 						 aria-labelledby="headingThree">
@@ -990,12 +990,12 @@ registerBlockType( 'cgb/block-donation-block', {
 
 				{ (isEmpty4) ? ({}) : ( <div className="panel panel-default">
 					<div className="panel-heading" role="tab" id="headingFour">
-						<h4 className="panel-title">
+						<div className="panel-title">
 							<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour"
 							   aria-expanded="false" aria-controls="collapseFour">
 								<h3 className="card__title4"> {title4} </h3>
 							</a>
-						</h4>
+						</div>
 					</div>
 					<div id="collapseFour" className="panel-collapse collapse" role="tabpanel"
 						 aria-labelledby="headingFour">
@@ -1012,12 +1012,12 @@ registerBlockType( 'cgb/block-donation-block', {
 
 				{ (isEmpty5) ? ({}) : ( <div className="panel panel-default">
 					<div className="panel-heading" role="tab" id="headingFive">
-						<h4 className="panel-title">
+						<div className="panel-title">
 							<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive"
 							   aria-expanded="false" aria-controls="collapseFive">
 								<h3 className="card__title5"> {title5} </h3>
 							</a>
-						</h4>
+						</div>
 					</div>
 					<div id="collapseFive" className="panel-collapse collapse" role="tabpanel"
 						 aria-labelledby="headingFive">
@@ -1034,12 +1034,12 @@ registerBlockType( 'cgb/block-donation-block', {
 
 				{ (isEmpty6) ? ({}) : ( <div className="panel panel-default">
 					<div className="panel-heading" role="tab" id="headingSix">
-						<h4 className="panel-title">
+						<div className="panel-title">
 							<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix"
 							   aria-expanded="false" aria-controls="collapseSix">
 								<h3 className="card__title6"> {title6} </h3>
 							</a>
-						</h4>
+						</div>
 					</div>
 					<div id="collapseSix" className="panel-collapse collapse" role="tabpanel"
 						 aria-labelledby="headingSix">
@@ -1056,12 +1056,12 @@ registerBlockType( 'cgb/block-donation-block', {
 
 				{ (isEmpty7) ? ({}) : ( <div className="panel panel-default">
 					<div className="panel-heading" role="tab" id="headingSeven">
-						<h4 className="panel-title">
+						<div className="panel-title">
 							<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven"
 							   aria-expanded="false" aria-controls="collapseSeven">
 								<h3 className="card__title7"> {title7} </h3>
 							</a>
-						</h4>
+						</div>
 					</div>
 					<div id="collapseSeven" className="panel-collapse collapse" role="tabpanel"
 						 aria-labelledby="headingSeven">
@@ -1078,12 +1078,12 @@ registerBlockType( 'cgb/block-donation-block', {
 
 				{ (isEmpty8) ? ({}) : ( <div className="panel panel-default">
 					<div className="panel-heading" role="tab" id="headingEight">
-						<h4 className="panel-title">
+						<div className="panel-title">
 							<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseEight"
 							   aria-expanded="false" aria-controls="collapseEight">
 								<h3 className="card__title8"> {title8} </h3>
 							</a>
-						</h4>
+						</div>
 					</div>
 					<div id="collapseEight" className="panel-collapse collapse" role="tabpanel"
 						 aria-labelledby="headingEight">
@@ -1100,12 +1100,12 @@ registerBlockType( 'cgb/block-donation-block', {
 
 				{ (isEmpty9) ? ({}) : ( <div className="panel panel-default">
 					<div className="panel-heading" role="tab" id="headingNine">
-						<h4 className="panel-title">
+						<div className="panel-title">
 							<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseNine"
 							   aria-expanded="false" aria-controls="collapseNine">
 								<h3 className="card__title9"> {title9} </h3>
 							</a>
-						</h4>
+						</div>
 					</div>
 					<div id="collapseNine" className="panel-collapse collapse" role="tabpanel"
 						 aria-labelledby="headingNine">
@@ -1122,12 +1122,12 @@ registerBlockType( 'cgb/block-donation-block', {
 
 				{ (isEmpty10) ? ({}) : ( <div className="panel panel-default">
 					<div className="panel-heading" role="tab" id="headingTen">
-						<h4 className="panel-title">
+						<div className="panel-title">
 							<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTen"
 							   aria-expanded="false" aria-controls="collapseTen">
 								<h3 className="card__title10"> {title10} </h3>
 							</a>
-						</h4>
+						</div>
 					</div>
 					<div id="collapseTen" className="panel-collapse collapse" role="tabpanel"
 						 aria-labelledby="headingTen">

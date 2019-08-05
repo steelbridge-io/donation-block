@@ -3,4 +3,21 @@
  *
  * CSS for both Frontend+Backend.
  */
+.wp-block-cgb-block-donation-block.panel-group .panel.panel-default .panel-heading {
+	background-color: #E5E2D6 !important;
+}
+.wp-block-cgb-block-donation-block.panel-group .panel.panel-default .panel-heading:hover {
+	background-color: #F2830A !important;
+}
+.wp-block-cgb-block-donation-block.panel-group .panel .panel-title a h3 {
+	color: #77715e;
+}
+.wp-block-cgb-block-donation-block.panel-group .panel .panel-title a h3:hover {
+	color: #fff;
+}
+.wp-block-cgb-block-donation-block.panel-group .panel .panel-title a {
+	text-decoration: none !important;
+}
+
+
 
