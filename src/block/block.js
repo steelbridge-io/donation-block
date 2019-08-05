@@ -54,7 +54,24 @@ registerBlockType( 'cgb/block-donation-block', {
 		imageUrl: {
 			attribute: 'src',
 			selector: '.card__image'
-		}
+		},
+		title2: {
+			source: 'text',
+			selector: '.card__title2'
+		},
+		body2: {
+			type: 'array',
+			source: 'children',
+			selector: '.card__body2'
+		},
+		imageAlt2: {
+			attribute: 'alt',
+			selector: '.card__image2'
+		},
+		imageUrl2: {
+			attribute: 'src',
+			selector: '.card__image2'
+		},
 	},
 
 	/**
@@ -73,6 +90,30 @@ registerBlockType( 'cgb/block-donation-block', {
 				return (
 					<img
 						src={ attributes.imageUrl }
+						onClick={ openEvent }
+						className="image"
+					/>
+				);
+			}
+			else {
+				return (
+					<div className="button-container">
+						<Button
+							onClick={ openEvent }
+							className="button button-large"
+						>
+							Pick an image
+						</Button>
+					</div>
+				);
+			}
+		};
+
+		const getImageButtonTwo = (openEvent) => {
+			if(attributes.imageUrl2) {
+				return (
+					<img
+						src={ attributes.imageUrl2 }
 						onClick={ openEvent }
 						className="image"
 					/>
@@ -114,6 +155,26 @@ registerBlockType( 'cgb/block-donation-block', {
 						placeholder="Your card text"
 					/>
 				</div>
+				<div className="container">
+					<MediaUpload
+						onSelect={ media => { setAttributes({ imageAlt2: media.alt, imageUrl2: media.url }); } }
+						type="image"
+						value={ attributes.imageID2 }
+						render={ ({ open }) => getImageButtonTwo(open) }
+					/>
+					<PlainText
+						onChange={ content => setAttributes({ title2: content }) }
+						value={ attributes.title2 }
+						placeholder="Title 2"
+						className="headingtwo"
+					/>
+					<RichText
+						onChange={ content => setAttributes({ body2: content }) }
+						value={ attributes.body2 }
+						multiline="p"
+						placeholder="Your card text"
+					/>
+				</div>
 			</div>
 		);
 	},
@@ -127,7 +188,9 @@ registerBlockType( 'cgb/block-donation-block', {
 	 * @link https://wordpress.org/gutenberg/handbook/block-api/block-edit-save/
 	 */
 	save: function( props ) {
-		const { attributes } = props;
+		//const { attributes } = props;
+		const { attributes: { title, imageUrl, imageAlt, body, title2='', body2, imageUrl2, imageAlt2 } } = props;
+		const isEmpty = title2.length > 0 ? false : true;
 		const cardImage = (src, alt) => {
 				if(!src) return null;
 
@@ -149,6 +212,31 @@ registerBlockType( 'cgb/block-donation-block', {
 				/>
 			);
 		};
+
+		const cardImage2 = (src, alt) => {
+			if(!src) return null;
+
+			if(alt) {
+				return (
+					<img
+						className="card__image2"
+						src={ src }
+						alt={ alt }
+					/>
+				);
+			}
+			return (
+				<img
+					className="card__image2"
+					src={ src }
+					alt=""
+					aria-hidden="true"
+				/>
+			);
+		};
+
+		//const cardTwo = () => { (isEmpty) ? ({}) : ( <h3 className="card__title2"> {attributes.title2} </h3> ) }
+
 		return (
 			<div className="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 
@@ -157,7 +245,7 @@ registerBlockType( 'cgb/block-donation-block', {
 						<h4 className="panel-title">
 							<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
 							   aria-expanded="true" aria-controls="collapseOne">
-								<h3 className="card__title">{ attributes.title }</h3>
+								<h3 className="card__title">{ title }</h3>
 							</a>
 						</h4>
 					</div>
@@ -165,14 +253,36 @@ registerBlockType( 'cgb/block-donation-block', {
 						 aria-labelledby="headingOne">
 						<div className="panel-body">
 							<div className="card">
-							{ cardImage(attributes.imageUrl, attributes.imageAlt) }
+							{ cardImage(imageUrl, imageAlt) }
 							<div className="card__body">
-								{ attributes.body }
+								{ body }
 							</div>
 							</div>
 						</div>
 					</div>
 				</div>
+				{ (isEmpty) ? ({}) : ( <div className="panel panel-default">
+					<div className="panel-heading" role="tab" id="headingTwo">
+						<h4 className="panel-title">
+							<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"
+							   aria-expanded="false" aria-controls="collapseTwo">
+								<h3 className="card__title2"> {title2} </h3>
+							</a>
+						</h4>
+					</div>
+					<div id="collapseTwo" className="panel-collapse collapse" role="tabpanel"
+						 aria-labelledby="headingTwo">
+						<div className="panel-body">
+							<div className="card">
+								{ cardImage2(imageUrl2, imageAlt2) }
+								<div className="card__body2">
+									{ body2 }
+								</div>
+							</div>
+						</div>
+					</div>
+				</div> ) }
+
 			</div>
 		);
 	},
