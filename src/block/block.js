@@ -926,12 +926,12 @@ registerBlockType( 'cgb/block-donation-block', {
 					<div className="panel-heading" role="tab" id="headingOne">
 						<div className="panel-title">
 							<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
-							   aria-expanded="true" aria-controls="collapseOne">
+							   aria-expanded="false" aria-controls="collapseOne">
 								<h3 className="card__title">{ title }</h3>
 							</a>
 						</div>
 					</div>
-					<div id="collapseOne" className="panel-collapse collapse in" role="tabpanel"
+					<div id="collapseOne" className="panel-collapse collapse" role="tabpanel"
 						 aria-labelledby="headingOne">
 						<div className="panel-body">
 							<div className="card">
