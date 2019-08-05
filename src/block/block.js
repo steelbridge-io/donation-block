@@ -72,6 +72,40 @@ registerBlockType( 'cgb/block-donation-block', {
 			attribute: 'src',
 			selector: '.card__image2'
 		},
+		title3: {
+			source: 'text',
+			selector: '.card__title3'
+		},
+		body3: {
+			type: 'array',
+			source: 'children',
+			selector: '.card__body3'
+		},
+		imageAlt3: {
+			attribute: 'alt',
+			selector: '.card__image3'
+		},
+		imageUrl3: {
+			attribute: 'src',
+			selector: '.card__image3'
+		},
+		title4: {
+			source: 'text',
+			selector: '.card__title4'
+		},
+		body4: {
+			type: 'array',
+			source: 'children',
+			selector: '.card__body4'
+		},
+		imageAlt4: {
+			attribute: 'alt',
+			selector: '.card__image4'
+		},
+		imageUrl4: {
+			attribute: 'src',
+			selector: '.card__image4'
+		},
 	},
 
 	/**
@@ -133,6 +167,54 @@ registerBlockType( 'cgb/block-donation-block', {
 			}
 		};
 
+		const getImageButtonThree = (openEvent) => {
+			if(attributes.imageUrl3) {
+				return (
+					<img
+						src={ attributes.imageUrl3 }
+						onClick={ openEvent }
+						className="image"
+					/>
+				);
+			}
+			else {
+				return (
+					<div className="button-container">
+						<Button
+							onClick={ openEvent }
+							className="button button-large"
+						>
+							Pick an image
+						</Button>
+					</div>
+				);
+			}
+		};
+
+		const getImageButtonFour = (openEvent) => {
+			if(attributes.imageUrl4) {
+				return (
+					<img
+						src={ attributes.imageUrl4 }
+						onClick={ openEvent }
+						className="image"
+					/>
+				);
+			}
+			else {
+				return (
+					<div className="button-container">
+						<Button
+							onClick={ openEvent }
+							className="button button-large"
+						>
+							Pick an image
+						</Button>
+					</div>
+				);
+			}
+		};
+
 		return (
 			<div className={ props.className }>
 				<div className="container">
@@ -155,7 +237,7 @@ registerBlockType( 'cgb/block-donation-block', {
 						placeholder="Your card text"
 					/>
 				</div>
-				<div className="container">
+				<div className="container containertwo">
 					<MediaUpload
 						onSelect={ media => { setAttributes({ imageAlt2: media.alt, imageUrl2: media.url }); } }
 						type="image"
@@ -175,6 +257,46 @@ registerBlockType( 'cgb/block-donation-block', {
 						placeholder="Your card text"
 					/>
 				</div>
+				<div className="container containerthree">
+					<MediaUpload
+						onSelect={ media => { setAttributes({ imageAlt3: media.alt, imageUrl3: media.url }); } }
+						type="image"
+						value={ attributes.imageID3 }
+						render={ ({ open }) => getImageButtonThree(open) }
+					/>
+					<PlainText
+						onChange={ content => setAttributes({ title3: content }) }
+						value={ attributes.title3 }
+						placeholder="Title 3"
+						className="headingthree"
+					/>
+					<RichText
+						onChange={ content => setAttributes({ body3: content }) }
+						value={ attributes.body3 }
+						multiline="p"
+						placeholder="Your card text"
+					/>
+				</div>
+				<div className="container containerfour">
+					<MediaUpload
+						onSelect={ media => { setAttributes({ imageAlt4: media.alt, imageUrl4: media.url }); } }
+						type="image"
+						value={ attributes.imageID4 }
+						render={ ({ open }) => getImageButtonFour(open) }
+					/>
+					<PlainText
+						onChange={ content => setAttributes({ title4: content }) }
+						value={ attributes.title4 }
+						placeholder="Title 4"
+						className="headingfour"
+					/>
+					<RichText
+						onChange={ content => setAttributes({ body4: content }) }
+						value={ attributes.body4 }
+						multiline="p"
+						placeholder="Your card text"
+					/>
+				</div>
 			</div>
 		);
 	},
@@ -189,8 +311,12 @@ registerBlockType( 'cgb/block-donation-block', {
 	 */
 	save: function( props ) {
 		//const { attributes } = props;
-		const { attributes: { title, imageUrl, imageAlt, body, title2='', body2, imageUrl2, imageAlt2 } } = props;
-		const isEmpty = title2.length > 0 ? false : true;
+		const { attributes: { title, imageUrl, imageAlt, body, title2='', body2, imageUrl2, imageAlt2, title3='', body3, imageUrl3, imageAlt3, title4='', body4, imageUrl4, imageAlt4 } } = props;
+
+		const isEmpty2 = title2.length > 0 ? false : true;
+		const isEmpty3 = title3.length > 0 ? false : true;
+		const isEmpty4 = title4.length > 0 ? false : true;
+
 		const cardImage = (src, alt) => {
 				if(!src) return null;
 
@@ -235,7 +361,49 @@ registerBlockType( 'cgb/block-donation-block', {
 			);
 		};
 
-		//const cardTwo = () => { (isEmpty) ? ({}) : ( <h3 className="card__title2"> {attributes.title2} </h3> ) }
+		const cardImage3 = (src, alt) => {
+			if(!src) return null;
+
+			if(alt) {
+				return (
+					<img
+						className="card__image3"
+						src={ src }
+						alt={ alt }
+					/>
+				);
+			}
+			return (
+				<img
+					className="card__image3"
+					src={ src }
+					alt=""
+					aria-hidden="true"
+				/>
+			);
+		};
+
+		const cardImage4 = (src, alt) => {
+			if(!src) return null;
+
+			if(alt) {
+				return (
+					<img
+						className="card__image4"
+						src={ src }
+						alt={ alt }
+					/>
+				);
+			}
+			return (
+				<img
+					className="card__image4"
+					src={ src }
+					alt=""
+					aria-hidden="true"
+				/>
+			);
+		};
 
 		return (
 			<div className="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
@@ -261,7 +429,8 @@ registerBlockType( 'cgb/block-donation-block', {
 						</div>
 					</div>
 				</div>
-				{ (isEmpty) ? ({}) : ( <div className="panel panel-default">
+
+				{ (isEmpty2) ? ({}) : ( <div className="panel panel-default">
 					<div className="panel-heading" role="tab" id="headingTwo">
 						<h4 className="panel-title">
 							<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"
@@ -277,6 +446,50 @@ registerBlockType( 'cgb/block-donation-block', {
 								{ cardImage2(imageUrl2, imageAlt2) }
 								<div className="card__body2">
 									{ body2 }
+								</div>
+							</div>
+						</div>
+					</div>
+				</div> ) }
+
+				{ (isEmpty3) ? ({}) : ( <div className="panel panel-default">
+					<div className="panel-heading" role="tab" id="headingThree">
+						<h4 className="panel-title">
+							<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree"
+							   aria-expanded="false" aria-controls="collapseThree">
+								<h3 className="card__title3"> {title3} </h3>
+							</a>
+						</h4>
+					</div>
+					<div id="collapseThree" className="panel-collapse collapse" role="tabpanel"
+						 aria-labelledby="headingThree">
+						<div className="panel-body">
+							<div className="card">
+								{ cardImage3(imageUrl3, imageAlt3) }
+								<div className="card__body3">
+									{ body3 }
+								</div>
+							</div>
+						</div>
+					</div>
+				</div> ) }
+
+				{ (isEmpty4) ? ({}) : ( <div className="panel panel-default">
+					<div className="panel-heading" role="tab" id="headingFour">
+						<h4 className="panel-title">
+							<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour"
+							   aria-expanded="false" aria-controls="collapseFour">
+								<h3 className="card__title4"> {title4} </h3>
+							</a>
+						</h4>
+					</div>
+					<div id="collapseFour" className="panel-collapse collapse" role="tabpanel"
+						 aria-labelledby="headingFour">
+						<div className="panel-body">
+							<div className="card">
+								{ cardImage4(imageUrl4, imageAlt4) }
+								<div className="card__body4">
+									{ body4 }
 								</div>
 							</div>
 						</div>
