@@ -929,7 +929,7 @@ registerBlockType( 'cgb/block-donation-block', {
 							<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
 							   aria-expanded="false" aria-controls="collapseOne">
 								<h3 className="card__title">{ title }</h3>
-							</a>
+							</a><i className="fas fa-caret-down"></i>
 						</div>
 					</div>
 					<div id="collapseOne" className="panel-collapse collapse" role="tabpanel"
