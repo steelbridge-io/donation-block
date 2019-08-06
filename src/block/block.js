@@ -219,6 +219,7 @@ registerBlockType( 'cgb/block-donation-block', {
 	 * @link https://wordpress.org/gutenberg/handbook/block-api/block-edit-save/
 	 */
 	edit: function( props ) {
+
 		const { attributes, className, setAttributes } = props;
 
 		const getImageButton = (openEvent) => {
@@ -473,7 +474,7 @@ registerBlockType( 'cgb/block-donation-block', {
 					<PlainText
 						onChange={ content => setAttributes({ title: content }) }
 						value={ attributes.title }
-						placeholder="Your card title"
+						placeholder="Title #1"
 						className="heading"
 					/>
 					<RichText
@@ -493,7 +494,7 @@ registerBlockType( 'cgb/block-donation-block', {
 					<PlainText
 						onChange={ content => setAttributes({ title2: content }) }
 						value={ attributes.title2 }
-						placeholder="Title 2"
+						placeholder="Title #2"
 						className="headingtwo"
 					/>
 					<RichText
@@ -513,7 +514,7 @@ registerBlockType( 'cgb/block-donation-block', {
 					<PlainText
 						onChange={ content => setAttributes({ title3: content }) }
 						value={ attributes.title3 }
-						placeholder="Title 3"
+						placeholder="Title #3"
 						className="headingthree"
 					/>
 					<RichText
@@ -533,7 +534,7 @@ registerBlockType( 'cgb/block-donation-block', {
 					<PlainText
 						onChange={ content => setAttributes({ title4: content }) }
 						value={ attributes.title4 }
-						placeholder="Title 4"
+						placeholder="Title #4"
 						className="headingfour"
 					/>
 					<RichText
@@ -553,7 +554,7 @@ registerBlockType( 'cgb/block-donation-block', {
 					<PlainText
 						onChange={ content => setAttributes({ title5: content }) }
 						value={ attributes.title5 }
-						placeholder="Title 5"
+						placeholder="Title #5"
 						className="headingfive"
 					/>
 					<RichText
@@ -935,16 +936,16 @@ registerBlockType( 'cgb/block-donation-block', {
 						 aria-labelledby="headingOne">
 						<div className="panel-body">
 							<div className="row">
-							<div className="card">
-								<div className="col-md-6">
-									{ cardImage(imageUrl, imageAlt) }
-								</div>
-								<div className="col-md-6">
-									<div className="card__body">
-										{ body }
+								<div className="card">
+									<div className="col-md-6">
+										{ cardImage(imageUrl, imageAlt) }
+									</div>
+									<div className="col-md-6">
+										<div className="card__body">
+											{ body }
+										</div>
 									</div>
 								</div>
-							</div>
 							</div>
 						</div>
 					</div>
@@ -990,10 +991,16 @@ registerBlockType( 'cgb/block-donation-block', {
 					<div id="collapseThree" className="panel-collapse collapse" role="tabpanel"
 						 aria-labelledby="headingThree">
 						<div className="panel-body">
-							<div className="card">
-								{ cardImage3(imageUrl3, imageAlt3) }
-								<div className="card__body3">
-									{ body3 }
+							<div className="row">
+								<div className="card">
+									<div className="col-md-6">
+										{ cardImage3(imageUrl3, imageAlt3) }
+									</div>
+									<div className="col-md-6">
+										<div className="card__body3">
+											{ body3 }
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -1012,10 +1019,16 @@ registerBlockType( 'cgb/block-donation-block', {
 					<div id="collapseFour" className="panel-collapse collapse" role="tabpanel"
 						 aria-labelledby="headingFour">
 						<div className="panel-body">
-							<div className="card">
-								{ cardImage4(imageUrl4, imageAlt4) }
-								<div className="card__body4">
-									{ body4 }
+							<div className="row">
+								<div className="card">
+									<div className="col-md-6">
+										<div className="card__body4">
+											{ body4 }
+										</div>
+									</div>
+									<div className="col-md-6">
+										{ cardImage4(imageUrl4, imageAlt4) }
+									</div>
 								</div>
 							</div>
 						</div>
@@ -1034,10 +1047,16 @@ registerBlockType( 'cgb/block-donation-block', {
 					<div id="collapseFive" className="panel-collapse collapse" role="tabpanel"
 						 aria-labelledby="headingFive">
 						<div className="panel-body">
-							<div className="card">
-								{ cardImage5(imageUrl5, imageAlt5) }
-								<div className="card__body5">
-									{ body5 }
+							<div class="row">
+								<div className="card">
+									<div class="col-md-6">
+										{ cardImage5(imageUrl5, imageAlt5) }
+									</div>
+									<div className="col-md-6">
+										<div className="card__body5">
+											{ body5 }
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -1056,17 +1075,23 @@ registerBlockType( 'cgb/block-donation-block', {
 					<div id="collapseSix" className="panel-collapse collapse" role="tabpanel"
 						 aria-labelledby="headingSix">
 						<div className="panel-body">
-							<div className="card">
-								{ cardImage6(imageUrl6, imageAlt6) }
-								<div className="card__body6">
-									{ body6 }
+							<div className="row">
+								<div className="card">
+									<div className="col-md-6">
+										<div className="card__body6">
+											{ body6 }
+										</div>
+									</div>
+									<div className="col-md-6">
+										{ cardImage6(imageUrl6, imageAlt6) }
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div> ) }
 
-				{ (isEmpty7) ? ({}) : ( <div className="panel panel-default">
+				{ (isEmpty7) ? ({}) : (<div className="panel panel-default">
 					<div className="panel-heading" role="tab" id="headingSeven">
 						<div className="panel-title">
 							<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven"
@@ -1078,42 +1103,54 @@ registerBlockType( 'cgb/block-donation-block', {
 					<div id="collapseSeven" className="panel-collapse collapse" role="tabpanel"
 						 aria-labelledby="headingSeven">
 						<div className="panel-body">
-							<div className="card">
-								{ cardImage7(imageUrl7, imageAlt7) }
-								<div className="card__body7">
-									{ body7 }
+							<div className="row">
+								<div className="card">
+									<div className="col-md-6">
+										{cardImage7(imageUrl7, imageAlt7)}
+									</div>
+									<div className="col-md-6">
+										<div className="card__body7">
+											{body7}
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-				</div> ) }
+				</div>) }
 
-				{ (isEmpty8) ? ({}) : ( <div className="panel panel-default">
+				{ (isEmpty8) ? ({}) : (<div className="panel panel-default">
 					<div className="panel-heading" role="tab" id="headingEight">
 						<div className="panel-title">
-							<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseEight"
-							   aria-expanded="false" aria-controls="collapseEight">
+							<a role="button" data-toggle="collapse" data-parent="#accordion"
+							   href="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
 								<h3 className="card__title8"> {title8} </h3>
 							</a>
 						</div>
 					</div>
-					<div id="collapseEight" className="panel-collapse collapse" role="tabpanel"
-						 aria-labelledby="headingEight">
+					<div id="collapseEight" className="panel-collapse collapse" role="tabpanel" aria-labelledby="headingEight">
 						<div className="panel-body">
-							<div className="card">
-								{ cardImage8(imageUrl8, imageAlt8) }
-								<div className="card__body8">
-									{ body8 }
+							<div className="row">
+								<div className="card">
+									<div className="col-md-6">
+										<div className="card__body8">
+											{body8}
+										</div>
+									</div>
+									<div className="col-md-6">
+										{cardImage8(imageUrl8, imageAlt8)}
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-				</div> ) }
+				</div>) }
 
-				{ (isEmpty9) ? ({}) : ( <div className="panel panel-default">
+				{ (isEmpty9) ? ({}) : (<div className="panel panel-default">
 					<div className="panel-heading" role="tab" id="headingNine">
 						<div className="panel-title">
-							<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseNine"
+							<a role="button" data-toggle="collapse" data-parent="#accordion"
+							   href="#collapseNine"
 							   aria-expanded="false" aria-controls="collapseNine">
 								<h3 className="card__title9"> {title9} </h3>
 							</a>
@@ -1122,17 +1159,23 @@ registerBlockType( 'cgb/block-donation-block', {
 					<div id="collapseNine" className="panel-collapse collapse" role="tabpanel"
 						 aria-labelledby="headingNine">
 						<div className="panel-body">
-							<div className="card">
-								{ cardImage9(imageUrl9, imageAlt9) }
-								<div className="card__body9">
-									{ body9 }
+							<div className="row">
+								<div className="card">
+									<div className="col-md-6">
+										{cardImage9(imageUrl9, imageAlt9)}
+									</div>
+									<div className="col-md-6">
+										<div className="card__body9">
+											{body9}
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-				</div> ) }
+				</div>) }
 
-				{ (isEmpty10) ? ({}) : ( <div className="panel panel-default">
+				{(isEmpty10) ? ({}) : (<div className="panel panel-default">
 					<div className="panel-heading" role="tab" id="headingTen">
 						<div className="panel-title">
 							<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTen"
@@ -1144,17 +1187,22 @@ registerBlockType( 'cgb/block-donation-block', {
 					<div id="collapseTen" className="panel-collapse collapse" role="tabpanel"
 						 aria-labelledby="headingTen">
 						<div className="panel-body">
-							<div className="card">
-								{ cardImage10(imageUrl10, imageAlt10) }
-								<div className="card__body10">
-									{ body10 }
+							<div className="row">
+								<div className="card">
+									<div className="col-md-6">
+										<div className="card__body10">
+											{body10}
+										</div>
+									</div>
+									<div className="col-md-6">
+										{cardImage10(imageUrl10, imageAlt10)}
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-				</div> ) }
-
+				</div>)}
 			</div>
 		);
-	},
-} );
+	}
+});
