@@ -706,7 +706,7 @@ registerBlockType( 'cgb/block-donation-block', {
 				if(alt) {
 					return (
 						<img
-							className="card__image"
+							className="card__image img-responsive"
 							src={ src }
 							alt={ alt }
 						/>
@@ -714,7 +714,7 @@ registerBlockType( 'cgb/block-donation-block', {
 				}
 			return (
 				<img
-					className="card__image"
+					className="card__image img-responsive"
 					src={ src }
 					alt=""
 					aria-hidden="true"
@@ -728,7 +728,7 @@ registerBlockType( 'cgb/block-donation-block', {
 			if(alt) {
 				return (
 					<img
-						className="card__image2"
+						className="card__image2 img-responsive"
 						src={ src }
 						alt={ alt }
 					/>
@@ -736,7 +736,7 @@ registerBlockType( 'cgb/block-donation-block', {
 			}
 			return (
 				<img
-					className="card__image2"
+					className="card__image2 img-responsive"
 					src={ src }
 					alt=""
 					aria-hidden="true"
@@ -750,7 +750,7 @@ registerBlockType( 'cgb/block-donation-block', {
 			if(alt) {
 				return (
 					<img
-						className="card__image3"
+						className="card__image3 img-responsive"
 						src={ src }
 						alt={ alt }
 					/>
@@ -758,7 +758,7 @@ registerBlockType( 'cgb/block-donation-block', {
 			}
 			return (
 				<img
-					className="card__image3"
+					className="card__image3 img-responsive"
 					src={ src }
 					alt=""
 					aria-hidden="true"
@@ -772,7 +772,7 @@ registerBlockType( 'cgb/block-donation-block', {
 			if(alt) {
 				return (
 					<img
-						className="card__image4"
+						className="card__image4 img-responsive"
 						src={ src }
 						alt={ alt }
 					/>
@@ -780,7 +780,7 @@ registerBlockType( 'cgb/block-donation-block', {
 			}
 			return (
 				<img
-					className="card__image4"
+					className="card__image4 img-responsive"
 					src={ src }
 					alt=""
 					aria-hidden="true"
@@ -794,7 +794,7 @@ registerBlockType( 'cgb/block-donation-block', {
 			if(alt) {
 				return (
 					<img
-						className="card__image5"
+						className="card__image5 img-responsive"
 						src={ src }
 						alt={ alt }
 					/>
@@ -802,7 +802,7 @@ registerBlockType( 'cgb/block-donation-block', {
 			}
 			return (
 				<img
-					className="card__image5"
+					className="card__image5 img-responsive"
 					src={ src }
 					alt=""
 					aria-hidden="true"
@@ -816,7 +816,7 @@ registerBlockType( 'cgb/block-donation-block', {
 			if(alt) {
 				return (
 					<img
-						className="card__image6"
+						className="card__image6 img-responsive"
 						src={ src }
 						alt={ alt }
 					/>
@@ -824,7 +824,7 @@ registerBlockType( 'cgb/block-donation-block', {
 			}
 			return (
 				<img
-					className="card__image6"
+					className="card__image6 img-responsive"
 					src={ src }
 					alt=""
 					aria-hidden="true"
@@ -838,7 +838,7 @@ registerBlockType( 'cgb/block-donation-block', {
 			if(alt) {
 				return (
 					<img
-						className="card__image7"
+						className="card__image7 img-responsive"
 						src={ src }
 						alt={ alt }
 					/>
@@ -846,7 +846,7 @@ registerBlockType( 'cgb/block-donation-block', {
 			}
 			return (
 				<img
-					className="card__image7"
+					className="card__image7 img-responsive"
 					src={ src }
 					alt=""
 					aria-hidden="true"
@@ -860,7 +860,7 @@ registerBlockType( 'cgb/block-donation-block', {
 			if(alt) {
 				return (
 					<img
-						className="card__image8"
+						className="card__image8 img-responsive"
 						src={ src }
 						alt={ alt }
 					/>
@@ -868,7 +868,7 @@ registerBlockType( 'cgb/block-donation-block', {
 			}
 			return (
 				<img
-					className="card__image8"
+					className="card__image8 img-responsive"
 					src={ src }
 					alt=""
 					aria-hidden="true"
@@ -882,7 +882,7 @@ registerBlockType( 'cgb/block-donation-block', {
 			if(alt) {
 				return (
 					<img
-						className="card__image9"
+						className="card__image9 img-responsive"
 						src={ src }
 						alt={ alt }
 					/>
@@ -890,7 +890,7 @@ registerBlockType( 'cgb/block-donation-block', {
 			}
 			return (
 				<img
-					className="card__image9"
+					className="card__image9 img-responsive"
 					src={ src }
 					alt=""
 					aria-hidden="true"
@@ -904,7 +904,7 @@ registerBlockType( 'cgb/block-donation-block', {
 			if(alt) {
 				return (
 					<img
-						className="card__image10"
+						className="card__image10 img-responsive"
 						src={ src }
 						alt={ alt }
 					/>
@@ -912,7 +912,7 @@ registerBlockType( 'cgb/block-donation-block', {
 			}
 			return (
 				<img
-					className="card__image10"
+					className="card__image10 img-responsive"
 					src={ src }
 					alt=""
 					aria-hidden="true"
@@ -934,10 +934,16 @@ registerBlockType( 'cgb/block-donation-block', {
 					<div id="collapseOne" className="panel-collapse collapse" role="tabpanel"
 						 aria-labelledby="headingOne">
 						<div className="panel-body">
+							<div className="row">
 							<div className="card">
-							{ cardImage(imageUrl, imageAlt) }
-							<div className="card__body">
-								{ body }
+								<div className="col-md-6">
+									{ cardImage(imageUrl, imageAlt) }
+								</div>
+								<div className="col-md-6">
+									<div className="card__body">
+										{ body }
+									</div>
+								</div>
 							</div>
 							</div>
 						</div>
@@ -956,10 +962,16 @@ registerBlockType( 'cgb/block-donation-block', {
 					<div id="collapseTwo" className="panel-collapse collapse" role="tabpanel"
 						 aria-labelledby="headingTwo">
 						<div className="panel-body">
-							<div className="card">
-								{ cardImage2(imageUrl2, imageAlt2) }
-								<div className="card__body2">
-									{ body2 }
+							<div class="row">
+								<div className="card">
+									<div className="col-md-6">
+										<div className="card__body2">
+											{ body2 }
+										</div>
+									</div>
+									<div className="col-md-6">
+										{ cardImage2(imageUrl2, imageAlt2) }
+									</div>
 								</div>
 							</div>
 						</div>
