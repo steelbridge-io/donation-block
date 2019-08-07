@@ -38,6 +38,10 @@ registerBlockType( 'cgb/block-donation-block', {
 		__( 'create-guten-block' ),
 	],
 	attributes: {
+		headingDiv: {
+			source: 'text',
+			selector: '.heading_div'
+		},
 		title: {
 			source: 'text',
 			selector: '.card__title'
@@ -59,6 +63,10 @@ registerBlockType( 'cgb/block-donation-block', {
 			type: 'array',
 			source: 'children',
 			selector: '.img_cap'
+		},
+		headingDiv2: {
+			source: 'text',
+			selector: '.heading_div2'
 		},
 		title2: {
 			source: 'text',
@@ -469,10 +477,15 @@ registerBlockType( 'cgb/block-donation-block', {
 
 		return (
 
-
 			<div className={ props.className }>
 
 				<div className="container">
+					<PlainText
+						onChange={ content => setAttributes({ headingDiv: content }) }
+						value={ attributes.headingDiv }
+						placeholder="Optional Heading Divider"
+						className="headingdivider"
+					/>
 					<MediaUpload
 						onSelect={ media => { setAttributes({ imageAlt: media.alt, imageUrl: media.url }); } }
 						type="image"
@@ -499,6 +512,12 @@ registerBlockType( 'cgb/block-donation-block', {
 					/>
 				</div>
 				<div className="container containertwo">
+					<PlainText
+						onChange={ content => setAttributes({ headingDiv2: content }) }
+						value={ attributes.headingDiv2 }
+						placeholder="Optional Heading Divider"
+						className="headingdivider2"
+					/>
 					<MediaUpload
 						onSelect={ media => { setAttributes({ imageAlt2: media.alt, imageUrl2: media.url }); } }
 						type="image"
@@ -693,8 +712,8 @@ registerBlockType( 'cgb/block-donation-block', {
 	save: function( props ) {
 
 		const { attributes: {
-			title, imageUrl, imageAlt, body, imageCap,
-			title2='', body2, imageUrl2, imageAlt2,
+			headingDiv='', title, imageUrl, imageAlt, body, imageCap,
+			headingDiv2='', title2='', body2, imageUrl2, imageAlt2,
 			title3='', body3, imageUrl3, imageAlt3,
 			title4='', body4, imageUrl4, imageAlt4,
 			title5='', body5, imageUrl5, imageAlt5,
@@ -705,6 +724,8 @@ registerBlockType( 'cgb/block-donation-block', {
 			title10='', body10, imageUrl10, imageAlt10,
 		} } = props;
 
+		const hdDivEmp = headingDiv.length > 0 ? false : true;
+		const hdDivEmp2 = headingDiv2.length > 0 ? false : true;
 		const isEmpty2 = title2.length > 0 ? false : true;
 		const isEmpty3 = title3.length > 0 ? false : true;
 		const isEmpty4 = title4.length > 0 ? false : true;
@@ -938,6 +959,12 @@ registerBlockType( 'cgb/block-donation-block', {
 
 		return (
 			<div className="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+				{ (hdDivEmp) ? ({}) : (
+				<div className="heading_div">
+				<h2>{ headingDiv }</h2>
+				</div>
+				)}
 				<div className="panel panel-default">
 					<div className="panel-heading rotate-click" role="tab" id="headingOne">
 						<div className="panel-title">
@@ -965,7 +992,13 @@ registerBlockType( 'cgb/block-donation-block', {
 					</div>
 				</div>
 
-				{ (isEmpty2) ? ({}) : ( <div className="panel panel-default">
+				{ (hdDivEmp2) ? ({}) : (
+				<div className="heading_div2"><h2>{ headingDiv2 }</h2></div>
+				)}
+
+				{ (isEmpty2) ? ({}) : (
+
+					<div className="panel panel-default">
 					<div className="panel-heading rotate-click" role="tab" id="headingTwo">
 						<div className="panel-title">
 							<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"
