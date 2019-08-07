@@ -46,7 +46,9 @@
 	.card__body7,
 	.card__body8,
 	.card__body9,
-	.card__body10 {
+	.card__body10,
+	.card__body11,
+	.card__body12 {
 		font-size: 1.8rem;
 	}
 
@@ -59,7 +61,9 @@
 	.img_cap7,
 	.img_cap8,
 	.img_cap9,
-	.img_cap10 {
+	.img_cap10,
+	.img_cap11,
+	.img_cap12 {
 		text-align: center;
 		margin-top: 10px;
 	}
@@ -77,7 +81,9 @@
 #headingSeven.rotate-click .panel-title a .rotate,
 #headingEight.rotate-click .panel-title a .rotate,
 #headingNine.rotate-click .panel-title a .rotate,
-#headingTen.rotate-click .panel-title a .rotate {
+#headingTen.rotate-click .panel-title a .rotate,
+#headingEleven.rotate-click .panel-title a .rotate,
+#headingTwelve.rotate-click .panel-title a .rotate {
 	-moz-transition: all 0.5s linear;
 	-webkit-transition: all 0.5s linear;
 	transition: all 0.5s linear;
@@ -92,7 +98,9 @@
 #headingSeven.rotate-click.downward .panel-title a .rotate,
 #headingEight.rotate-click.downward .panel-title a .rotate,
 #headingNine.rotate-click.downward .panel-title a .rotate,
-#headingTen.rotate-click.downward .panel-title a .rotate {
+#headingTen.rotate-click.downward .panel-title a .rotate,
+#headingEleven.rotate-click.downward .panel-title a .rotate,
+#headingTwelve.rotate-click.downward .panel-title a .rotate {
 	-moz-transform:rotate(90deg);
 	-webkit-transform:rotate(90deg);
 	transform:rotate(90deg);
