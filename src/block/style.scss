@@ -4,34 +4,66 @@
  * CSS for both Frontend+Backend.
  */
 .wp-block-cgb-block-donation-block.panel-group {
+
+	h2 {
+		margin-top: 1.618em;
+	}
+
 	.panel.panel-default .panel-heading {
 		background-color: $boss-background !important;
 	}
+
 	.panel.panel-default .panel-heading:hover {
 		background-color: $boss-orange !important;
 	}
+
 	.panel .panel-title a h3 {
 		color: #77715e;
 	}
+
 	.panel .panel-title a h3:hover {
 		color: $bright-white;
 	}
+
 	.panel .panel-title a {
 		text-decoration: none !important;
 	}
+
 	.panel-default .panel-collapse .panel-body {
 		background-color: $dark-white;
 	}
+
 	.card.blockimg img {
-		margin: 0 auto;
+		margin: 0 auto 1.618em auto;
 	}
-	.card__body {
+
+	.card__body,
+	.card__body2,
+	.card__body3,
+	.card__body4,
+	.card__body5,
+	.card__body6,
+	.card__body7,
+	.card__body8,
+	.card__body9,
+	.card__body10 {
 		font-size: 1.8rem;
 	}
-	.img_cap {
+
+	.img_cap,
+	.img_cap2,
+	.img_cap3,
+	.img_cap4,
+	.img_cap5,
+	.img_cap6,
+	.img_cap7,
+	.img_cap8,
+	.img_cap9,
+	.img_cap10 {
 		text-align: center;
 		margin-top: 10px;
 	}
+
 }
 
 /** Fontawesome

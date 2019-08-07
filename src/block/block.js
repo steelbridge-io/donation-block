@@ -38,10 +38,6 @@ registerBlockType( 'cgb/block-donation-block', {
 		__( 'create-guten-block' ),
 	],
 	attributes: {
-		headingDiv: {
-			source: 'text',
-			selector: '.heading_div'
-		},
 		title: {
 			source: 'text',
 			selector: '.card__title'
@@ -64,9 +60,9 @@ registerBlockType( 'cgb/block-donation-block', {
 			source: 'children',
 			selector: '.img_cap'
 		},
-		headingDiv2: {
+		headingDiv: {
 			source: 'text',
-			selector: '.heading_div2'
+			selector: '.heading_div'
 		},
 		title2: {
 			source: 'text',
@@ -85,6 +81,15 @@ registerBlockType( 'cgb/block-donation-block', {
 			attribute: 'src',
 			selector: '.card__image2'
 		},
+		imageCap2: {
+			type: 'array',
+			source: 'children',
+			selector: '.img_cap2'
+		},
+		headingDiv2: {
+			source: 'text',
+			selector: '.heading_div2'
+		},
 		title3: {
 			source: 'text',
 			selector: '.card__title3'
@@ -101,6 +106,15 @@ registerBlockType( 'cgb/block-donation-block', {
 		imageUrl3: {
 			attribute: 'src',
 			selector: '.card__image3'
+		},
+		imageCap3: {
+			type: 'array',
+			source: 'children',
+			selector: '.img_cap3'
+		},
+		headingDiv3: {
+			source: 'text',
+			selector: '.heading_div3'
 		},
 		title4: {
 			source: 'text',
@@ -119,6 +133,15 @@ registerBlockType( 'cgb/block-donation-block', {
 			attribute: 'src',
 			selector: '.card__image4'
 		},
+		imageCap4: {
+			type: 'array',
+			source: 'children',
+			selector: '.img_cap4'
+		},
+		headingDiv4: {
+			source: 'text',
+			selector: '.heading_div4'
+		},
 		title5: {
 			source: 'text',
 			selector: '.card__title5'
@@ -135,6 +158,15 @@ registerBlockType( 'cgb/block-donation-block', {
 		imageUrl5: {
 			attribute: 'src',
 			selector: '.card__image5'
+		},
+		imageCap5: {
+			type: 'array',
+			source: 'children',
+			selector: '.img_cap5'
+		},
+		headingDiv5: {
+			source: 'text',
+			selector: '.heading_div5'
 		},
 		title6: {
 			source: 'text',
@@ -153,6 +185,15 @@ registerBlockType( 'cgb/block-donation-block', {
 			attribute: 'src',
 			selector: '.card__image6'
 		},
+		imageCap6: {
+			type: 'array',
+			source: 'children',
+			selector: '.img_cap6'
+		},
+		headingDiv6: {
+			source: 'text',
+			selector: '.heading_div6'
+		},
 		title7: {
 			source: 'text',
 			selector: '.card__title7'
@@ -169,6 +210,15 @@ registerBlockType( 'cgb/block-donation-block', {
 		imageUrl7: {
 			attribute: 'src',
 			selector: '.card__image7'
+		},
+		imageCap7: {
+			type: 'array',
+			source: 'children',
+			selector: '.img_cap7'
+		},
+		headingDiv7: {
+			source: 'text',
+			selector: '.heading_div7'
 		},
 		title8: {
 			source: 'text',
@@ -187,6 +237,15 @@ registerBlockType( 'cgb/block-donation-block', {
 			attribute: 'src',
 			selector: '.card__image8'
 		},
+		imageCap8: {
+			type: 'array',
+			source: 'children',
+			selector: '.img_cap8'
+		},
+		headingDiv8: {
+			source: 'text',
+			selector: '.heading_div8'
+		},
 		title9: {
 			source: 'text',
 			selector: '.card__title9'
@@ -204,6 +263,15 @@ registerBlockType( 'cgb/block-donation-block', {
 			attribute: 'src',
 			selector: '.card__image9'
 		},
+		imageCap9: {
+			type: 'array',
+			source: 'children',
+			selector: '.img_cap9'
+		},
+		headingDiv9: {
+			source: 'text',
+			selector: '.heading_div9'
+		},
 		title10: {
 			source: 'text',
 			selector: '.card__title10'
@@ -220,6 +288,15 @@ registerBlockType( 'cgb/block-donation-block', {
 		imageUrl10: {
 			attribute: 'src',
 			selector: '.card__image10'
+		},
+		imageCap10: {
+			type: 'array',
+			source: 'children',
+			selector: '.img_cap10'
+		},
+		headingDiv10: {
+			source: 'text',
+			selector: '.heading_div10'
 		},
 	},
 
@@ -501,7 +578,7 @@ registerBlockType( 'cgb/block-donation-block', {
 					<PlainText
 						onChange={ content => setAttributes({ title: content }) }
 						value={ attributes.title }
-						placeholder="Title #1"
+						placeholder="Title &#35;1"
 						className="heading"
 					/>
 					<RichText
@@ -509,6 +586,7 @@ registerBlockType( 'cgb/block-donation-block', {
 						value={ attributes.body }
 						multiline="p"
 						placeholder="Your card text"
+						className="card_text"
 					/>
 				</div>
 				<div className="container containertwo">
@@ -524,6 +602,12 @@ registerBlockType( 'cgb/block-donation-block', {
 						value={ attributes.imageID2 }
 						render={ ({ open }) => getImageButtonTwo(open) }
 					/>
+					<RichText
+						onChange={ content => setAttributes({ imageCap2: content }) }
+						value={ attributes.imageCap2 }
+						multiline="p"
+						placeholder="Optional Image Caption"
+					/>
 					<PlainText
 						onChange={ content => setAttributes({ title2: content }) }
 						value={ attributes.title2 }
@@ -538,11 +622,23 @@ registerBlockType( 'cgb/block-donation-block', {
 					/>
 				</div>
 				<div className="container containerthree">
+					<PlainText
+						onChange={ content => setAttributes({ headingDiv3: content }) }
+						value={ attributes.headingDiv3 }
+						placeholder="Optional Heading Divider"
+						className="headingdivider3"
+					/>
 					<MediaUpload
 						onSelect={ media => { setAttributes({ imageAlt3: media.alt, imageUrl3: media.url }); } }
 						type="image"
 						value={ attributes.imageID3 }
 						render={ ({ open }) => getImageButtonThree(open) }
+					/>
+					<RichText
+						onChange={ content => setAttributes({ imageCap3: content }) }
+						value={ attributes.imageCap3 }
+						multiline="p"
+						placeholder="Optional Image Caption"
 					/>
 					<PlainText
 						onChange={ content => setAttributes({ title3: content }) }
@@ -558,11 +654,23 @@ registerBlockType( 'cgb/block-donation-block', {
 					/>
 				</div>
 				<div className="container containerfour">
+					<PlainText
+						onChange={ content => setAttributes({ headingDiv4: content }) }
+						value={ attributes.headingDiv4 }
+						placeholder="Optional Heading Divider"
+						className="headingdivider4"
+					/>
 					<MediaUpload
 						onSelect={ media => { setAttributes({ imageAlt4: media.alt, imageUrl4: media.url }); } }
 						type="image"
 						value={ attributes.imageID4 }
 						render={ ({ open }) => getImageButtonFour(open) }
+					/>
+					<RichText
+						onChange={ content => setAttributes({ imageCap4: content }) }
+						value={ attributes.imageCap4 }
+						multiline="p"
+						placeholder="Optional Image Caption"
 					/>
 					<PlainText
 						onChange={ content => setAttributes({ title4: content }) }
@@ -578,11 +686,23 @@ registerBlockType( 'cgb/block-donation-block', {
 					/>
 				</div>
 				<div className="container containerfive">
+					<PlainText
+						onChange={ content => setAttributes({ headingDiv5: content }) }
+						value={ attributes.headingDiv5 }
+						placeholder="Optional Heading Divider"
+						className="headingdivider5"
+					/>
 					<MediaUpload
 						onSelect={ media => { setAttributes({ imageAlt5: media.alt, imageUrl5: media.url }); } }
 						type="image"
 						value={ attributes.imageID5 }
 						render={ ({ open }) => getImageButtonFive(open) }
+					/>
+					<RichText
+						onChange={ content => setAttributes({ imageCap5: content }) }
+						value={ attributes.imageCap5 }
+						multiline="p"
+						placeholder="Optional Image Caption"
 					/>
 					<PlainText
 						onChange={ content => setAttributes({ title5: content }) }
@@ -598,11 +718,23 @@ registerBlockType( 'cgb/block-donation-block', {
 					/>
 				</div>
 				<div className="container containersix">
+					<PlainText
+						onChange={ content => setAttributes({ headingDiv6: content }) }
+						value={ attributes.headingDiv6 }
+						placeholder="Optional Heading Divider"
+						className="headingdivider6"
+					/>
 					<MediaUpload
 						onSelect={ media => { setAttributes({ imageAlt6: media.alt, imageUrl6: media.url }); } }
 						type="image"
 						value={ attributes.imageID6 }
 						render={ ({ open }) => getImageButtonSix(open) }
+					/>
+					<RichText
+						onChange={ content => setAttributes({ imageCap6: content }) }
+						value={ attributes.imageCap6 }
+						multiline="p"
+						placeholder="Optional Image Caption"
 					/>
 					<PlainText
 						onChange={ content => setAttributes({ title6: content }) }
@@ -618,11 +750,23 @@ registerBlockType( 'cgb/block-donation-block', {
 					/>
 				</div>
 				<div className="container containerseven">
+					<PlainText
+						onChange={ content => setAttributes({ headingDiv7: content }) }
+						value={ attributes.headingDiv7 }
+						placeholder="Optional Heading Divider"
+						className="headingdivider7"
+					/>
 					<MediaUpload
 						onSelect={ media => { setAttributes({ imageAlt7: media.alt, imageUrl7: media.url }); } }
 						type="image"
 						value={ attributes.imageID7 }
 						render={ ({ open }) => getImageButtonSeven(open) }
+					/>
+					<RichText
+						onChange={ content => setAttributes({ imageCap7: content }) }
+						value={ attributes.imageCap7 }
+						multiline="p"
+						placeholder="Optional Image Caption"
 					/>
 					<PlainText
 						onChange={ content => setAttributes({ title7: content }) }
@@ -638,11 +782,23 @@ registerBlockType( 'cgb/block-donation-block', {
 					/>
 				</div>
 				<div className="container containereight">
+					<PlainText
+						onChange={ content => setAttributes({ headingDiv8: content }) }
+						value={ attributes.headingDiv8 }
+						placeholder="Optional Heading Divider"
+						className="headingdivider8"
+					/>
 					<MediaUpload
 						onSelect={ media => { setAttributes({ imageAlt8: media.alt, imageUrl8: media.url }); } }
 						type="image"
 						value={ attributes.imageID8 }
 						render={ ({ open }) => getImageButtonEight(open) }
+					/>
+					<RichText
+						onChange={ content => setAttributes({ imageCap8: content }) }
+						value={ attributes.imageCap8 }
+						multiline="p"
+						placeholder="Optional Image Caption"
 					/>
 					<PlainText
 						onChange={ content => setAttributes({ title8: content }) }
@@ -658,11 +814,23 @@ registerBlockType( 'cgb/block-donation-block', {
 					/>
 				</div>
 				<div className="container containernine">
+					<PlainText
+						onChange={ content => setAttributes({ headingDiv9: content }) }
+						value={ attributes.headingDiv9 }
+						placeholder="Optional Heading Divider"
+						className="headingdivider9"
+					/>
 					<MediaUpload
 						onSelect={ media => { setAttributes({ imageAlt9: media.alt, imageUrl9: media.url }); } }
 						type="image"
 						value={ attributes.imageID9 }
 						render={ ({ open }) => getImageButtonNine(open) }
+					/>
+					<RichText
+						onChange={ content => setAttributes({ imageCap9: content }) }
+						value={ attributes.imageCap9 }
+						multiline="p"
+						placeholder="Optional Image Caption"
 					/>
 					<PlainText
 						onChange={ content => setAttributes({ title9: content }) }
@@ -678,11 +846,23 @@ registerBlockType( 'cgb/block-donation-block', {
 					/>
 				</div>
 				<div className="container containerten">
+					<PlainText
+						onChange={ content => setAttributes({ headingDiv10: content }) }
+						value={ attributes.headingDiv10 }
+						placeholder="Optional Heading Divider"
+						className="headingdivider10"
+					/>
 					<MediaUpload
 						onSelect={ media => { setAttributes({ imageAlt10: media.alt, imageUrl10: media.url }); } }
 						type="image"
 						value={ attributes.imageID10 }
 						render={ ({ open }) => getImageButtonTen(open) }
+					/>
+					<RichText
+						onChange={ content => setAttributes({ imageCap10: content }) }
+						value={ attributes.imageCap10 }
+						multiline="p"
+						placeholder="Optional Image Caption"
 					/>
 					<PlainText
 						onChange={ content => setAttributes({ title10: content }) }
@@ -697,6 +877,7 @@ registerBlockType( 'cgb/block-donation-block', {
 						placeholder="Your card text"
 					/>
 				</div>
+
 			</div>
 		);
 	},
@@ -713,19 +894,28 @@ registerBlockType( 'cgb/block-donation-block', {
 
 		const { attributes: {
 			headingDiv='', title, imageUrl, imageAlt, body, imageCap,
-			headingDiv2='', title2='', body2, imageUrl2, imageAlt2,
-			title3='', body3, imageUrl3, imageAlt3,
-			title4='', body4, imageUrl4, imageAlt4,
-			title5='', body5, imageUrl5, imageAlt5,
-			title6='', body6, imageUrl6, imageAlt6,
-			title7='', body7, imageUrl7, imageAlt7,
-			title8='', body8, imageUrl8, imageAlt8,
-			title9='', body9, imageUrl9, imageAlt9,
-			title10='', body10, imageUrl10, imageAlt10,
+			headingDiv2='', title2='', body2, imageUrl2, imageAlt2, imageCap2,
+			headingDiv3='', title3='', body3, imageUrl3, imageAlt3, imageCap3,
+			headingDiv4='', title4='', body4, imageUrl4, imageAlt4, imageCap4,
+			headingDiv5='', title5='', body5, imageUrl5, imageAlt5, imageCap5,
+			headingDiv6='', title6='', body6, imageUrl6, imageAlt6, imageCap6,
+			headingDiv7='', title7='', body7, imageUrl7, imageAlt7, imageCap7,
+			headingDiv8='', title8='', body8, imageUrl8, imageAlt8, imageCap8,
+			headingDiv9='', title9='', body9, imageUrl9, imageAlt9, imageCap9,
+			headingDiv10='', title10='', body10, imageUrl10, imageAlt10, imageCap10
 		} } = props;
 
 		const hdDivEmp = headingDiv.length > 0 ? false : true;
 		const hdDivEmp2 = headingDiv2.length > 0 ? false : true;
+		const hdDivEmp3 = headingDiv3.length > 0 ? false : true;
+		const hdDivEmp4 = headingDiv4.length > 0 ? false : true;
+		const hdDivEmp5 = headingDiv5.length > 0 ? false : true;
+		const hdDivEmp6 = headingDiv6.length > 0 ? false : true;
+		const hdDivEmp7 = headingDiv7.length > 0 ? false : true;
+		const hdDivEmp8 = headingDiv8.length > 0 ? false : true;
+		const hdDivEmp9 = headingDiv9.length > 0 ? false : true;
+		const hdDivEmp10 = headingDiv10.length > 0 ? false : true;
+
 		const isEmpty2 = title2.length > 0 ? false : true;
 		const isEmpty3 = title3.length > 0 ? false : true;
 		const isEmpty4 = title4.length > 0 ? false : true;
@@ -735,7 +925,17 @@ registerBlockType( 'cgb/block-donation-block', {
 		const isEmpty8 = title8.length > 0 ? false : true;
 		const isEmpty9 = title9.length > 0 ? false : true;
 		const isEmpty10 = title10.length > 0 ? false : true;
+
 		const capEmpty	= imageCap.length > 0 ? false : true;
+		const capEmpty2 = imageCap2.length > 0 ? false : true;
+		const capEmpty3 = imageCap3.length > 0 ? false : true;
+		const capEmpty4 = imageCap4.length > 0 ? false : true;
+		const capEmpty5 = imageCap5.length > 0 ? false : true;
+		const capEmpty6 = imageCap6.length > 0 ? false : true;
+		const capEmpty7 = imageCap7.length > 0 ? false : true;
+		const capEmpty8 = imageCap8.length > 0 ? false : true;
+		const capEmpty9 = imageCap9.length > 0 ? false : true;
+		const capEmpty10 = imageCap10.length > 0 ? false : true;
 
 		const cardImage = (src, alt ) => {
 				if(!src) return null;
@@ -993,7 +1193,9 @@ registerBlockType( 'cgb/block-donation-block', {
 				</div>
 
 				{ (hdDivEmp2) ? ({}) : (
-				<div className="heading_div2"><h2>{ headingDiv2 }</h2></div>
+				<div className="heading_div2">
+					<h2>{ headingDiv2 }</h2>
+				</div>
 				)}
 
 				{ (isEmpty2) ? ({}) : (
@@ -1010,15 +1212,24 @@ registerBlockType( 'cgb/block-donation-block', {
 					<div id="collapseTwo" className="panel-collapse collapse" role="tabpanel"
 						 aria-labelledby="headingTwo">
 						<div className="panel-body">
-							<div className="card">
+							<div className="card blockimg">
 								<div className="card__body2">
 									{ body2 }
 								</div>
 								{ cardImage2(imageUrl2, imageAlt2) }
+								{ (capEmpty2) ? ({}) : (
+									<div className="img_cap2">{ imageCap2 }</div>
+								)}
 							</div>
 						</div>
 					</div>
 				</div> ) }
+
+				{ (hdDivEmp3) ? ({}) : (
+					<div className="heading_div3">
+						<h2>{ headingDiv3 }</h2>
+					</div>
+				)}
 
 				{ (isEmpty3) ? ({}) : ( <div className="panel panel-default">
 					<div className="panel-heading rotate-click" role="tab" id="headingThree">
@@ -1032,8 +1243,11 @@ registerBlockType( 'cgb/block-donation-block', {
 					<div id="collapseThree" className="panel-collapse collapse" role="tabpanel"
 						 aria-labelledby="headingThree">
 						<div className="panel-body">
-							<div className="card">
+							<div className="card blockimg">
 								{ cardImage3(imageUrl3, imageAlt3) }
+								{ (capEmpty3) ? ({}) : (
+									<div className="img_cap3">{ imageCap3 }</div>
+								)}
 								<div className="card__body3">
 									{ body3 }
 								</div>
@@ -1041,6 +1255,12 @@ registerBlockType( 'cgb/block-donation-block', {
 						</div>
 					</div>
 				</div> ) }
+
+				{ (hdDivEmp4) ? ({}) : (
+					<div className="heading_div4">
+						<h2>{ headingDiv4 }</h2>
+					</div>
+				)}
 
 				{ (isEmpty4) ? ({}) : ( <div className="panel panel-default">
 					<div className="panel-heading rotate-click" role="tab" id="headingFour">
@@ -1054,15 +1274,24 @@ registerBlockType( 'cgb/block-donation-block', {
 					<div id="collapseFour" className="panel-collapse collapse" role="tabpanel"
 						 aria-labelledby="headingFour">
 						<div className="panel-body">
-							<div className="card">
+							<div className="card blockimg">
 								<div className="card__body4">
 									{ body4 }
 								</div>
 								{ cardImage4(imageUrl4, imageAlt4) }
+								{ (capEmpty4) ? ({}) : (
+									<div className="img_cap4">{ imageCap4 }</div>
+								)}
 							</div>
 						</div>
 					</div>
 				</div> ) }
+
+				{ (hdDivEmp5) ? ({}) : (
+					<div className="heading_div5">
+						<h2>{ headingDiv5 }</h2>
+					</div>
+				)}
 
 				{ (isEmpty5) ? ({}) : ( <div className="panel panel-default">
 					<div className="panel-heading rotate-click" role="tab" id="headingFive">
@@ -1076,8 +1305,11 @@ registerBlockType( 'cgb/block-donation-block', {
 					<div id="collapseFive" className="panel-collapse collapse" role="tabpanel"
 						 aria-labelledby="headingFive">
 						<div className="panel-body">
-							<div className="card">
+							<div className="card blockimg">
 								{ cardImage5(imageUrl5, imageAlt5) }
+								{ (capEmpty5) ? ({}) : (
+									<div className="img_cap5">{ imageCap5 }</div>
+								)}
 								<div className="card__body5">
 									{ body5 }
 								</div>
@@ -1085,6 +1317,12 @@ registerBlockType( 'cgb/block-donation-block', {
 						</div>
 					</div>
 				</div> ) }
+
+				{ (hdDivEmp6) ? ({}) : (
+					<div className="heading_div6">
+						<h2>{ headingDiv6 }</h2>
+					</div>
+				)}
 
 				{ (isEmpty6) ? ({}) : ( <div className="panel panel-default">
 					<div className="panel-heading rotate-click" role="tab" id="headingSix">
@@ -1098,15 +1336,24 @@ registerBlockType( 'cgb/block-donation-block', {
 					<div id="collapseSix" className="panel-collapse collapse" role="tabpanel"
 						 aria-labelledby="headingSix">
 						<div className="panel-body">
-							<div className="card">
+							<div className="card blockimg">
 								<div className="card__body6">
 									{ body6 }
 								</div>
 								{ cardImage6(imageUrl6, imageAlt6) }
+								{ (capEmpty6) ? ({}) : (
+									<div className="img_cap6">{ imageCap6 }</div>
+								)}
 							</div>
 						</div>
 					</div>
 				</div> ) }
+
+				{ (hdDivEmp7) ? ({}) : (
+					<div className="heading_div7">
+						<h2>{ headingDiv7 }</h2>
+					</div>
+				)}
 
 				{ (isEmpty7) ? ({}) : (<div className="panel panel-default">
 					<div className="panel-heading rotate-click" role="tab" id="headingSeven">
@@ -1120,8 +1367,11 @@ registerBlockType( 'cgb/block-donation-block', {
 					<div id="collapseSeven" className="panel-collapse collapse" role="tabpanel"
 						 aria-labelledby="headingSeven">
 						<div className="panel-body">
-							<div className="card">
+							<div className="card blockimg">
 								{cardImage7(imageUrl7, imageAlt7)}
+								{ (capEmpty7) ? ({}) : (
+									<div className="img_cap7">{ imageCap7 }</div>
+								)}
 								<div className="card__body7">
 									{body7}
 								</div>
@@ -1129,6 +1379,12 @@ registerBlockType( 'cgb/block-donation-block', {
 						</div>
 					</div>
 				</div>) }
+
+				{ (hdDivEmp8) ? ({}) : (
+					<div className="heading_div8">
+						<h2>{ headingDiv8 }</h2>
+					</div>
+				)}
 
 				{ (isEmpty8) ? ({}) : (<div className="panel panel-default">
 					<div className="panel-heading rotate-click" role="tab" id="headingEight">
@@ -1141,15 +1397,24 @@ registerBlockType( 'cgb/block-donation-block', {
 					</div>
 					<div id="collapseEight" className="panel-collapse collapse" role="tabpanel" aria-labelledby="headingEight">
 						<div className="panel-body">
-							<div className="card">
+							<div className="card blockimg">
 								<div className="card__body8">
 									{body8}
 								</div>
 								{cardImage8(imageUrl8, imageAlt8)}
+								{ (capEmpty8) ? ({}) : (
+									<div className="img_cap8">{ imageCap8 }</div>
+								)}
 							</div>
 						</div>
 					</div>
 				</div>) }
+
+				{ (hdDivEmp9) ? ({}) : (
+					<div className="heading_div9">
+						<h2>{ headingDiv9 }</h2>
+					</div>
+				)}
 
 				{ (isEmpty9) ? ({}) : (<div className="panel panel-default">
 					<div className="panel-heading rotate-click" role="tab" id="headingNine">
@@ -1164,8 +1429,11 @@ registerBlockType( 'cgb/block-donation-block', {
 					<div id="collapseNine" className="panel-collapse collapse" role="tabpanel"
 						 aria-labelledby="headingNine">
 						<div className="panel-body">
-							<div className="card">
+							<div className="card blockimg">
 								{cardImage9(imageUrl9, imageAlt9)}
+								{ (capEmpty9) ? ({}) : (
+									<div className="img_cap9">{ imageCap9 }</div>
+								)}
 								<div className="card__body9">
 									{body9}
 								</div>
@@ -1173,6 +1441,12 @@ registerBlockType( 'cgb/block-donation-block', {
 						</div>
 					</div>
 				</div>) }
+
+				{ (hdDivEmp10) ? ({}) : (
+					<div className="heading_div10">
+						<h2>{ headingDiv10 }</h2>
+					</div>
+				)}
 
 				{(isEmpty10) ? ({}) : (<div className="panel panel-default">
 					<div className="panel-heading rotate-click" role="tab" id="headingTen">
@@ -1186,11 +1460,14 @@ registerBlockType( 'cgb/block-donation-block', {
 					<div id="collapseTen" className="panel-collapse collapse" role="tabpanel"
 						 aria-labelledby="headingTen">
 						<div className="panel-body">
-							<div className="card">
+							<div className="card blockimg">
 								<div className="card__body10">
 									{body10}
 								</div>
 								{cardImage10(imageUrl10, imageAlt10)}
+								{ (capEmpty10) ? ({}) : (
+									<div className="img_cap10">{ imageCap10 }</div>
+								)}
 							</div>
 						</div>
 					</div>
