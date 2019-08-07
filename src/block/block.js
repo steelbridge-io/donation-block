@@ -463,7 +463,10 @@ registerBlockType( 'cgb/block-donation-block', {
 		};
 
 		return (
+
+
 			<div className={ props.className }>
+
 				<div className="container">
 					<MediaUpload
 						onSelect={ media => { setAttributes({ imageAlt: media.alt, imageUrl: media.url }); } }
@@ -924,27 +927,21 @@ registerBlockType( 'cgb/block-donation-block', {
 		return (
 			<div className="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 				<div className="panel panel-default">
-					<div className="panel-heading" role="tab" id="headingOne">
+					<div className="panel-heading rotate-click" role="tab" id="headingOne">
 						<div className="panel-title">
 							<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
 							   aria-expanded="false" aria-controls="collapseOne">
-								<h3 className="card__title">{ title }</h3>
-							</a><i className="fas fa-caret-down"></i>
+								<h3 className="card__title">{ title }&nbsp;<i className="fas fa-2x fa-caret-right rotate"></i></h3>
+							</a>
 						</div>
 					</div>
 					<div id="collapseOne" className="panel-collapse collapse" role="tabpanel"
 						 aria-labelledby="headingOne">
 						<div className="panel-body">
-							<div className="row">
-								<div className="card">
-									<div className="col-md-6">
-										{ cardImage(imageUrl, imageAlt) }
-									</div>
-									<div className="col-md-6">
-										<div className="card__body">
-											{ body }
-										</div>
-									</div>
+							<div className="card">
+								{ cardImage(imageUrl, imageAlt) }
+								<div className="card__body">
+									{ body }
 								</div>
 							</div>
 						</div>
@@ -952,55 +949,43 @@ registerBlockType( 'cgb/block-donation-block', {
 				</div>
 
 				{ (isEmpty2) ? ({}) : ( <div className="panel panel-default">
-					<div className="panel-heading" role="tab" id="headingTwo">
+					<div className="panel-heading rotate-click" role="tab" id="headingTwo">
 						<div className="panel-title">
 							<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"
 							   aria-expanded="false" aria-controls="collapseTwo">
-								<h3 className="card__title2"> {title2} </h3>
+								<h3 className="card__title2"> {title2}&nbsp;<i className="fas fa-2x fa-caret-right rotate"></i></h3>
 							</a>
 						</div>
 					</div>
 					<div id="collapseTwo" className="panel-collapse collapse" role="tabpanel"
 						 aria-labelledby="headingTwo">
 						<div className="panel-body">
-							<div class="row">
-								<div className="card">
-									<div className="col-md-6">
-										<div className="card__body2">
-											{ body2 }
-										</div>
-									</div>
-									<div className="col-md-6">
-										{ cardImage2(imageUrl2, imageAlt2) }
-									</div>
+							<div className="card">
+								<div className="card__body2">
+									{ body2 }
 								</div>
+								{ cardImage2(imageUrl2, imageAlt2) }
 							</div>
 						</div>
 					</div>
 				</div> ) }
 
 				{ (isEmpty3) ? ({}) : ( <div className="panel panel-default">
-					<div className="panel-heading" role="tab" id="headingThree">
+					<div className="panel-heading rotate-click" role="tab" id="headingThree">
 						<div className="panel-title">
 							<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree"
 							   aria-expanded="false" aria-controls="collapseThree">
-								<h3 className="card__title3"> {title3} </h3>
+								<h3 className="card__title3">{title3}&nbsp;<i className="fas fa-2x fa-caret-right rotate"></i></h3>
 							</a>
 						</div>
 					</div>
 					<div id="collapseThree" className="panel-collapse collapse" role="tabpanel"
 						 aria-labelledby="headingThree">
 						<div className="panel-body">
-							<div className="row">
-								<div className="card">
-									<div className="col-md-6">
-										{ cardImage3(imageUrl3, imageAlt3) }
-									</div>
-									<div className="col-md-6">
-										<div className="card__body3">
-											{ body3 }
-										</div>
-									</div>
+							<div className="card">
+								{ cardImage3(imageUrl3, imageAlt3) }
+								<div className="card__body3">
+									{ body3 }
 								</div>
 							</div>
 						</div>
@@ -1008,55 +993,43 @@ registerBlockType( 'cgb/block-donation-block', {
 				</div> ) }
 
 				{ (isEmpty4) ? ({}) : ( <div className="panel panel-default">
-					<div className="panel-heading" role="tab" id="headingFour">
+					<div className="panel-heading rotate-click" role="tab" id="headingFour">
 						<div className="panel-title">
 							<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour"
 							   aria-expanded="false" aria-controls="collapseFour">
-								<h3 className="card__title4"> {title4} </h3>
+								<h3 className="card__title4">{title4}&nbsp;<i className="fas fa-2x fa-caret-right rotate"></i></h3>
 							</a>
 						</div>
 					</div>
 					<div id="collapseFour" className="panel-collapse collapse" role="tabpanel"
 						 aria-labelledby="headingFour">
 						<div className="panel-body">
-							<div className="row">
-								<div className="card">
-									<div className="col-md-6">
-										<div className="card__body4">
-											{ body4 }
-										</div>
-									</div>
-									<div className="col-md-6">
-										{ cardImage4(imageUrl4, imageAlt4) }
-									</div>
+							<div className="card">
+								<div className="card__body4">
+									{ body4 }
 								</div>
+								{ cardImage4(imageUrl4, imageAlt4) }
 							</div>
 						</div>
 					</div>
 				</div> ) }
 
 				{ (isEmpty5) ? ({}) : ( <div className="panel panel-default">
-					<div className="panel-heading" role="tab" id="headingFive">
+					<div className="panel-heading rotate-click" role="tab" id="headingFive">
 						<div className="panel-title">
 							<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive"
 							   aria-expanded="false" aria-controls="collapseFive">
-								<h3 className="card__title5"> {title5} </h3>
+								<h3 className="card__title5">{title5}&nbsp;<i className="fas fa-2x fa-caret-right rotate"></i></h3>
 							</a>
 						</div>
 					</div>
 					<div id="collapseFive" className="panel-collapse collapse" role="tabpanel"
 						 aria-labelledby="headingFive">
 						<div className="panel-body">
-							<div class="row">
-								<div className="card">
-									<div class="col-md-6">
-										{ cardImage5(imageUrl5, imageAlt5) }
-									</div>
-									<div className="col-md-6">
-										<div className="card__body5">
-											{ body5 }
-										</div>
-									</div>
+							<div className="card">
+								{ cardImage5(imageUrl5, imageAlt5) }
+								<div className="card__body5">
+									{ body5 }
 								</div>
 							</div>
 						</div>
@@ -1064,55 +1037,43 @@ registerBlockType( 'cgb/block-donation-block', {
 				</div> ) }
 
 				{ (isEmpty6) ? ({}) : ( <div className="panel panel-default">
-					<div className="panel-heading" role="tab" id="headingSix">
+					<div className="panel-heading rotate-click" role="tab" id="headingSix">
 						<div className="panel-title">
 							<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix"
 							   aria-expanded="false" aria-controls="collapseSix">
-								<h3 className="card__title6"> {title6} </h3>
+								<h3 className="card__title6">{title6}&nbsp;<i className="fas fa-2x fa-caret-right rotate"></i></h3>
 							</a>
 						</div>
 					</div>
 					<div id="collapseSix" className="panel-collapse collapse" role="tabpanel"
 						 aria-labelledby="headingSix">
 						<div className="panel-body">
-							<div className="row">
-								<div className="card">
-									<div className="col-md-6">
-										<div className="card__body6">
-											{ body6 }
-										</div>
-									</div>
-									<div className="col-md-6">
-										{ cardImage6(imageUrl6, imageAlt6) }
-									</div>
+							<div className="card">
+								<div className="card__body6">
+									{ body6 }
 								</div>
+								{ cardImage6(imageUrl6, imageAlt6) }
 							</div>
 						</div>
 					</div>
 				</div> ) }
 
 				{ (isEmpty7) ? ({}) : (<div className="panel panel-default">
-					<div className="panel-heading" role="tab" id="headingSeven">
+					<div className="panel-heading rotate-click" role="tab" id="headingSeven">
 						<div className="panel-title">
 							<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven"
 							   aria-expanded="false" aria-controls="collapseSeven">
-								<h3 className="card__title7"> {title7} </h3>
+								<h3 className="card__title7">{title7}&nbsp;<i className="fas fa-2x fa-caret-right rotate"></i></h3>
 							</a>
 						</div>
 					</div>
 					<div id="collapseSeven" className="panel-collapse collapse" role="tabpanel"
 						 aria-labelledby="headingSeven">
 						<div className="panel-body">
-							<div className="row">
-								<div className="card">
-									<div className="col-md-6">
-										{cardImage7(imageUrl7, imageAlt7)}
-									</div>
-									<div className="col-md-6">
-										<div className="card__body7">
-											{body7}
-										</div>
-									</div>
+							<div className="card">
+								{cardImage7(imageUrl7, imageAlt7)}
+								<div className="card__body7">
+									{body7}
 								</div>
 							</div>
 						</div>
@@ -1120,55 +1081,43 @@ registerBlockType( 'cgb/block-donation-block', {
 				</div>) }
 
 				{ (isEmpty8) ? ({}) : (<div className="panel panel-default">
-					<div className="panel-heading" role="tab" id="headingEight">
+					<div className="panel-heading rotate-click" role="tab" id="headingEight">
 						<div className="panel-title">
 							<a role="button" data-toggle="collapse" data-parent="#accordion"
 							   href="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
-								<h3 className="card__title8"> {title8} </h3>
+								<h3 className="card__title8">{title8}&nbsp;<i className="fas fa-2x fa-caret-right rotate"></i></h3>
 							</a>
 						</div>
 					</div>
 					<div id="collapseEight" className="panel-collapse collapse" role="tabpanel" aria-labelledby="headingEight">
 						<div className="panel-body">
-							<div className="row">
-								<div className="card">
-									<div className="col-md-6">
-										<div className="card__body8">
-											{body8}
-										</div>
-									</div>
-									<div className="col-md-6">
-										{cardImage8(imageUrl8, imageAlt8)}
-									</div>
+							<div className="card">
+								<div className="card__body8">
+									{body8}
 								</div>
+								{cardImage8(imageUrl8, imageAlt8)}
 							</div>
 						</div>
 					</div>
 				</div>) }
 
 				{ (isEmpty9) ? ({}) : (<div className="panel panel-default">
-					<div className="panel-heading" role="tab" id="headingNine">
+					<div className="panel-heading rotate-click" role="tab" id="headingNine">
 						<div className="panel-title">
 							<a role="button" data-toggle="collapse" data-parent="#accordion"
 							   href="#collapseNine"
 							   aria-expanded="false" aria-controls="collapseNine">
-								<h3 className="card__title9"> {title9} </h3>
+								<h3 className="card__title9">{title9}&nbsp;<i className="fas fa-2x fa-caret-right rotate"></i></h3>
 							</a>
 						</div>
 					</div>
 					<div id="collapseNine" className="panel-collapse collapse" role="tabpanel"
 						 aria-labelledby="headingNine">
 						<div className="panel-body">
-							<div className="row">
-								<div className="card">
-									<div className="col-md-6">
-										{cardImage9(imageUrl9, imageAlt9)}
-									</div>
-									<div className="col-md-6">
-										<div className="card__body9">
-											{body9}
-										</div>
-									</div>
+							<div className="card">
+								{cardImage9(imageUrl9, imageAlt9)}
+								<div className="card__body9">
+									{body9}
 								</div>
 							</div>
 						</div>
@@ -1176,28 +1125,22 @@ registerBlockType( 'cgb/block-donation-block', {
 				</div>) }
 
 				{(isEmpty10) ? ({}) : (<div className="panel panel-default">
-					<div className="panel-heading" role="tab" id="headingTen">
+					<div className="panel-heading rotate-click" role="tab" id="headingTen">
 						<div className="panel-title">
 							<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTen"
 							   aria-expanded="false" aria-controls="collapseTen">
-								<h3 className="card__title10"> {title10} </h3>
+								<h3 className="card__title10">{title10}&nbsp;<i className="fas fa-2x fa-caret-right rotate"></i> </h3>
 							</a>
 						</div>
 					</div>
 					<div id="collapseTen" className="panel-collapse collapse" role="tabpanel"
 						 aria-labelledby="headingTen">
 						<div className="panel-body">
-							<div className="row">
-								<div className="card">
-									<div className="col-md-6">
-										<div className="card__body10">
-											{body10}
-										</div>
-									</div>
-									<div className="col-md-6">
-										{cardImage10(imageUrl10, imageAlt10)}
-									</div>
+							<div className="card">
+								<div className="card__body10">
+									{body10}
 								</div>
+								{cardImage10(imageUrl10, imageAlt10)}
 							</div>
 						</div>
 					</div>

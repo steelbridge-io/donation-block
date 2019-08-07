@@ -3,18 +3,60 @@
  *
  * CSS for both Frontend+Backend.
  */
-.wp-block-cgb-block-donation-block.panel-group .panel.panel-default .panel-heading {
-	background-color: #E5E2D6 !important;
+.wp-block-cgb-block-donation-block.panel-group {
+	.panel.panel-default .panel-heading {
+		background-color: $boss-background !important;
+	}
+	.panel.panel-default .panel-heading:hover {
+		background-color: $boss-orange !important;
+	}
+	.panel .panel-title a h3 {
+		color: #77715e;
+	}
+	.panel .panel-title a h3:hover {
+		color: $bright-white;
+	}
+	.panel .panel-title a {
+		text-decoration: none !important;
+	}
+	.panel-default .panel-collapse .panel-body {
+		background-color: $dark-white;
+	}
 }
-.wp-block-cgb-block-donation-block.panel-group .panel.panel-default .panel-heading:hover {
-	background-color: #F2830A !important;
+
+/** Fontawesome
+============================ */
+#headingOne.rotate-click .panel-title a .rotate,
+#headingTwo.rotate-click .panel-title a .rotate,
+#headingThree.rotate-click .panel-title a .rotate,
+#headingFour.rotate-click .panel-title a .rotate,
+#headingFive.rotate-click .panel-title a .rotate,
+#headingSix.rotate-click .panel-title a .rotate,
+#headingSeven.rotate-click .panel-title a .rotate,
+#headingEight.rotate-click .panel-title a .rotate,
+#headingNine.rotate-click .panel-title a .rotate,
+#headingTen.rotate-click .panel-title a .rotate {
+	-moz-transition: all 0.5s linear;
+	-webkit-transition: all 0.5s linear;
+	transition: all 0.5s linear;
 }
-.wp-block-cgb-block-donation-block.panel-group .panel .panel-title a h3 {
-	color: #77715e;
+
+#headingOne.rotate-click.downward .panel-title a .rotate,
+#headingTwo.rotate-click.downward .panel-title a .rotate,
+#headingThree.rotate-click.downward .panel-title a .rotate,
+#headingFour.rotate-click.downward .panel-title a .rotate,
+#headingFive.rotate-click.downward .panel-title a .rotate,
+#headingSix.rotate-click.downward .panel-title a .rotate,
+#headingSeven.rotate-click.downward .panel-title a .rotate,
+#headingEight.rotate-click.downward .panel-title a .rotate,
+#headingNine.rotate-click.downward .panel-title a .rotate,
+#headingTen.rotate-click.downward .panel-title a .rotate {
+	-moz-transform:rotate(90deg);
+	-webkit-transform:rotate(90deg);
+	transform:rotate(90deg);
 }
-.wp-block-cgb-block-donation-block.panel-group .panel .panel-title a h3:hover {
-	color: #fff;
-}
-.wp-block-cgb-block-donation-block.panel-group .panel .panel-title a {
-	text-decoration: none !important;
+.fas.fa-2x.fa-caret-right {
+	position: relative;
+	top: 8px;
+	padding-left: .2em;
 }
