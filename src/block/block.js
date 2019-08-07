@@ -55,6 +55,11 @@ registerBlockType( 'cgb/block-donation-block', {
 			attribute: 'src',
 			selector: '.card__image'
 		},
+		imageCap: {
+			type: 'array',
+			source: 'children',
+			selector: '.img_cap'
+		},
 		title2: {
 			source: 'text',
 			selector: '.card__title2'
@@ -474,6 +479,12 @@ registerBlockType( 'cgb/block-donation-block', {
 						value={ attributes.imageID }
 						render={ ({ open }) => getImageButton(open) }
 					/>
+					<RichText
+						onChange={ content => setAttributes({ imageCap: content }) }
+						value={ attributes.imageCap }
+						multiline="p"
+						placeholder="Optional Image Caption"
+					/>
 					<PlainText
 						onChange={ content => setAttributes({ title: content }) }
 						value={ attributes.title }
@@ -682,7 +693,7 @@ registerBlockType( 'cgb/block-donation-block', {
 	save: function( props ) {
 
 		const { attributes: {
-			title, imageUrl, imageAlt, body,
+			title, imageUrl, imageAlt, body, imageCap,
 			title2='', body2, imageUrl2, imageAlt2,
 			title3='', body3, imageUrl3, imageAlt3,
 			title4='', body4, imageUrl4, imageAlt4,
@@ -691,7 +702,7 @@ registerBlockType( 'cgb/block-donation-block', {
 			title7='', body7, imageUrl7, imageAlt7,
 			title8='', body8, imageUrl8, imageAlt8,
 			title9='', body9, imageUrl9, imageAlt9,
-			title10='', body10, imageUrl10, imageAlt10
+			title10='', body10, imageUrl10, imageAlt10,
 		} } = props;
 
 		const isEmpty2 = title2.length > 0 ? false : true;
@@ -703,8 +714,9 @@ registerBlockType( 'cgb/block-donation-block', {
 		const isEmpty8 = title8.length > 0 ? false : true;
 		const isEmpty9 = title9.length > 0 ? false : true;
 		const isEmpty10 = title10.length > 0 ? false : true;
+		const capEmpty	= imageCap.length > 0 ? false : true;
 
-		const cardImage = (src, alt) => {
+		const cardImage = (src, alt ) => {
 				if(!src) return null;
 
 				if(alt) {
@@ -938,8 +950,13 @@ registerBlockType( 'cgb/block-donation-block', {
 					<div id="collapseOne" className="panel-collapse collapse" role="tabpanel"
 						 aria-labelledby="headingOne">
 						<div className="panel-body">
-							<div className="card">
+							<div className="card blockimg">
 								{ cardImage(imageUrl, imageAlt) }
+
+								{ (capEmpty) ? ({}) : (
+								<div className="img_cap">{ imageCap }</div>
+								)}
+
 								<div className="card__body">
 									{ body }
 								</div>
