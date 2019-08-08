@@ -48,7 +48,10 @@
 	.card__body9,
 	.card__body10,
 	.card__body11,
-	.card__body12 {
+	.card__body12,
+	.card__body13,
+	.card__body14,
+	.card__body15 {
 		font-size: 1.8rem;
 	}
 
@@ -63,48 +66,76 @@
 	.img_cap9,
 	.img_cap10,
 	.img_cap11,
-	.img_cap12 {
+	.img_cap12,
+	.img_cap13,
+	.img_cap14,
+	.img_cap15 {
 		text-align: center;
 		margin-top: 10px;
 	}
-
 }
 
 /** Fontawesome
 ============================ */
-#headingOne.rotate-click .panel-title a .rotate,
-#headingTwo.rotate-click .panel-title a .rotate,
-#headingThree.rotate-click .panel-title a .rotate,
-#headingFour.rotate-click .panel-title a .rotate,
-#headingFive.rotate-click .panel-title a .rotate,
-#headingSix.rotate-click .panel-title a .rotate,
-#headingSeven.rotate-click .panel-title a .rotate,
-#headingEight.rotate-click .panel-title a .rotate,
-#headingNine.rotate-click .panel-title a .rotate,
-#headingTen.rotate-click .panel-title a .rotate,
-#headingEleven.rotate-click .panel-title a .rotate,
-#headingTwelve.rotate-click .panel-title a .rotate {
+#headingOne .paneltitle.rotate-click a .rotate,
+#headingTwo .paneltitle.rotate-click a .rotate,
+#headingThree .paneltitle.rotate-click a .rotate,
+#headingFour .paneltitle.rotate-click a .rotate,
+#headingFive .paneltitle.rotate-click a .rotate,
+#headingSix .paneltitle.rotate-click a .rotate,
+#headingSeven .paneltitle.rotate-click a .rotate,
+#headingEight .paneltitle.rotate-click a .rotate,
+#headingNine .paneltitle.rotate-click a .rotate,
+#headingTen .paneltitle.rotate-click a .rotate,
+#headingEleven .paneltitle.rotate-click a .rotate,
+#headingTwelve .paneltitle.rotate-click a .rotate,
+#headingThirteen .paneltitle.rotate-click a .rotate,
+#headingFourteen .paneltitle.rotate-click a .rotate,
+#headingFifteen .paneltitle.rotate-click a .rotate {
 	-moz-transition: all 0.5s linear;
 	-webkit-transition: all 0.5s linear;
 	transition: all 0.5s linear;
 }
 
-#headingOne.rotate-click.downward .panel-title a .rotate,
-#headingTwo.rotate-click.downward .panel-title a .rotate,
-#headingThree.rotate-click.downward .panel-title a .rotate,
-#headingFour.rotate-click.downward .panel-title a .rotate,
-#headingFive.rotate-click.downward .panel-title a .rotate,
-#headingSix.rotate-click.downward .panel-title a .rotate,
-#headingSeven.rotate-click.downward .panel-title a .rotate,
-#headingEight.rotate-click.downward .panel-title a .rotate,
-#headingNine.rotate-click.downward .panel-title a .rotate,
-#headingTen.rotate-click.downward .panel-title a .rotate,
-#headingEleven.rotate-click.downward .panel-title a .rotate,
-#headingTwelve.rotate-click.downward .panel-title a .rotate {
+#headingOne .paneltitle.rotate-click a[aria-expanded="true"] h3.card__title i.rotate,
+#headingTwo .paneltitle.rotate-click a[aria-expanded="true"] h3.card__title2 i.rotate,
+#headingThree .paneltitle.rotate-click a[aria-expanded="true"] h3.card__title3 i.rotate,
+#headingFour .paneltitle.rotate-click a[aria-expanded="true"] h3.card__title4 i.rotate,
+#headingFive .paneltitle.rotate-click a[aria-expanded="true"] h3.card__title5 i.rotate,
+#headingSix .paneltitle.rotate-click a[aria-expanded="true"] h3.card__title6 i.rotate,
+#headingSeven .paneltitle.rotate-click a[aria-expanded="true"] h3.card__title7 i.rotate,
+#headingEight .paneltitle.rotate-click a[aria-expanded="true"] h3.card__title8 i.rotate,
+#headingNine .paneltitle.rotate-click a[aria-expanded="true"] h3.card__title9 i.rotate,
+#headingTen .paneltitle.rotate-click a[aria-expanded="true"] h3.card__title10 i.rotate,
+#headingEleven .paneltitle.rotate-click a[aria-expanded="true"] h3.card__title11 i.rotate,
+#headingTwelve .paneltitle.rotate-click a[aria-expanded="true"] h3.card__title12 i.rotate,
+#headingThirteen .paneltitle.rotate-click a[aria-expanded="true"] h3.card__title13 i.rotate,
+#headingFourteen .paneltitle.rotate-click a[aria-expanded="true"] h3.card__title14 i.rotate,
+#headingFifteen .paneltitle.rotate-click a[aria-expanded="true"] h3.card__title15 i.rotate {
 	-moz-transform:rotate(90deg);
 	-webkit-transform:rotate(90deg);
 	transform:rotate(90deg);
 }
+#headingOne .paneltitle.rotate-click a[aria-expanded="false"] h3.card__title i.rotate,
+#headingTwo .paneltitle.rotate-click a[aria-expanded="false"] h3.card__title2 i.rotate,
+#headingThree .paneltitle.rotate-click a[aria-expanded="false"] h3.card__title3 i.rotate,
+#headingFour .paneltitle.rotate-click a[aria-expanded="false"] h3.card__title4 i.rotate,
+#headingFive .paneltitle.rotate-click a[aria-expanded="false"] h3.card__title5 i.rotate,
+#headingSix .paneltitle.rotate-click a[aria-expanded="false"] h3.card__title6 i.rotate,
+#headingSeven .paneltitle.rotate-click a[aria-expanded="false"] h3.card__title7 i.rotate,
+#headingEight .paneltitle.rotate-click a[aria-expanded="false"] h3.card__title8 i.rotate,
+#headingNine .paneltitle.rotate-click a[aria-expanded="false"] h3.card__title9 i.rotate,
+#headingTen .paneltitle.rotate-click a[aria-expanded="false"] h3.card__title10 i.rotate,
+#headingEleven .paneltitle.rotate-click a[aria-expanded="false"] h3.card__title11 i.rotate,
+#headingTwelve .paneltitle.rotate-click a[aria-expanded="false"] h3.card__title12 i.rotate,
+#headingThirteen .paneltitle.rotate-click a[aria-expanded="false"] h3.card__title13 i.rotate,
+#headingFourteen .paneltitle.rotate-click a[aria-expanded="false"] h3.card__title14 i.rotate,
+#headingFifteen .paneltitle.rotate-click a[aria-expanded="false"] h3.card__title15 i.rotate {
+	-moz-transform:rotate(-0deg);
+	-webkit-transform:rotate(-0deg);
+	transform:rotate(-0deg);
+}
+
 .fas.fa-2x.fa-caret-right {
 	position: relative;
 	top: 8px;
